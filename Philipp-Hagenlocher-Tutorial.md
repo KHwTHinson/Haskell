@@ -54,8 +54,10 @@ https://www.youtube.com/channel/UC3xdLFFsqG701QAyGJIPT1g/videos
 -- Executing the function
   in_range 0.5 1.5 1 -- <- Type error
   in_range 0 5 3 -- <- Correct
-
 ```
 
 ### Functions (let)
 ```haskell
+
+
+```
