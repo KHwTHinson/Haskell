@@ -271,8 +271,8 @@ sum (x:xs) = x + sum xs
 evens :: [Int] -> [Int]
 evens [] = []
 evens (x:xs)
-  mod x 2 == 0 = x : evens xs
-  otherwise = evens xs
+  |  mod x 2 == 0 = x : evens xs
+  |  otherwise = evens xs
 ```
 
 ## Tuples
