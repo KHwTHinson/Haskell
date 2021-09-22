@@ -224,7 +224,7 @@ length [1,2,3,4,5]
   => 5
 
 
--- Init gives you the first element removed of the list (only without first element).
+-- Init gives you the last element removed of the list (only without first element).
 init :: [a] -> [a]
 init [1,2,3,4,5]
   => [1,2,3,4]
