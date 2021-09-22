@@ -13,6 +13,8 @@ Evaluate function whenever it is necessary
 
 # Haskell 2a: Haskell as a Calculator [(Video Link)](https://www.youtube.com/watch?v=hJGEuFjcvZ8&list=PLS6urCrsYES24Fwzg5-Uga1QEbNm9kiU_&index=2)
 
+enter ghci by typing ```ghci``` in terminal; quit ghci by typing ```:quit```
+
 ## Haskell can perform common calculation
 Examples of common calculation
 ```
@@ -47,4 +49,14 @@ True || False => True
 ```
 
 Haskell use fewer parentheses than other languages, e.g. functions not taking in ```( )```
+```
+max 3 5 * 2 = 10
+(max 3 5) * 2 = 10
+3 `max` 5 = 5
+```
 
+# Haskell 2b: Functions, if, and let [(Video Link)](https://www.youtube.com/watch?v=hJGEuFjcvZ8&list=PLS6urCrsYES24Fwzg5-Uga1QEbNm9kiU_&index=3)
+
+- Enter ```ghci``` in the directory where the file is located
+- Load the files by using ```:load <FileName>``` inside ghci (e.g. type ```:load baby``` for baby.hs inside the directory)
+- Functions can be executed after loading the file where functions located.
