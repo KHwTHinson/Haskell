@@ -305,15 +305,15 @@ addTuples [(1,2), (2,3), (100,100)]
 ```
 
 # Haskell for Imperative Programmers #5 - List Exercises
-
+Solution please find workings at Philipp.hs
 ## Exercise #1
 Create a function elem that returns True if an element is in a given list and returns False otherwise
 
-```
-elem :: (Eq a) => a -> [a] -> Bool
-```
+## Exercise #2
+Create a function nub that removes all duplicates from a given list
 
+## Exercise #3
+Create a function isAsc that returns True if the list given to it is a list of ascending order
 
-
-
-
+## Exercise #4
+Create a function hasPath that determines if a path from one node to another exists within a directed graph
