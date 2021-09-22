@@ -48,12 +48,12 @@ z = 3.1415
 ### Types (Functions)
 ```haskell
 -- Defining a function
-in_range :: Integer -> Integer -> Integer -> Bool
-in_range min max x = x >= min && x <= max
+in_range2 :: Integer -> Integer -> Integer -> Bool
+in_range2 min max x = x >= min && x <= max
 
 -- Executing the function
-in_range 0.5 1.5 1 -- <- Type error
-in_range 0 5 3 -- <- Correct
+in_range2 0.5 1.5 1 -- <- Type error
+in_range2 0 5 3 -- <- Correct
 ```
 
 ### Functions (let)
@@ -69,9 +69,9 @@ in_range min max x =
 
 Declarative style (correct one)
 ```haskell
-in_range min max x =
+in_range3 min max x =
   let in_lower_bound = min <= x
-    in_upper_bound = max >= x
+      in_upper_bound = max >= x
   in
     in_lower_bound && in_upper_bound
 ```
@@ -142,9 +142,9 @@ The first guard (expression on the left hand side) evaluated to be true will be 
 There can be multuple guards
 Last guard, the otherwise guard, is always taken and evaluated to be true.
 ```haskell
-fac n
-  n <= 1 =1
-  otherwise = n * fac (n-1)
+fac2 n
+  |  n <= 1 =1
+  |  otherwise = n * fac (n-1)
 ```
 
 ## Pattern Matching
@@ -160,8 +160,8 @@ Note: _ is a wildcard matches any patterns.
 fac n = aux n 1
   where
     aux n acc
-      n <= = acc
-      otherwise = aux (n-1) (n*acc)
+      |  n <= 1 = acc
+      |  otherwise = aux (n-1) (n*acc)
 ```
 
 # Haskell for Imperative Programmers #4 - Lists and Tuples
