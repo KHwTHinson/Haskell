@@ -60,3 +60,16 @@ max 3 5 * 2 = 10
 - Enter ```ghci``` in the directory where the file is located
 - Load the files by using ```:load <FileName>``` inside ghci (e.g. type ```:load baby``` for baby.hs inside the directory)
 - Functions can be executed after loading the file where functions located.
+
+```haskell 
+if x then y else z
+``` 
+
+for simple logical operation
+
+```let``` can be used in the ghci to define variable
+
+- type error could be catch for number when Haskell thought it was an integer but the function only works with float.
+
+
+# Haskell 2c: Lists [(Video Link)](https://www.youtube.com/watch?v=hJGEuFjcvZ8&list=PLS6urCrsYES24Fwzg5-Uga1QEbNm9kiU_&index=4)
