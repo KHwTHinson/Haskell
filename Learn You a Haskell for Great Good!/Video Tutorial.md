@@ -100,3 +100,20 @@ for simple logical operation
   ```[[ x | x <- word, not (x `elem` "aeiou")] | word <- ["bell", "book", "candle"]]``` => `["bll","bk","cndl"]`
 - e.g. `[[x * y | y <- [1..5]] | x <- [1..5]]` => `[[1,2,3,4,5],[2,4,6,8,10],[3,6,9,12,15],[4,8,12,16,20],[5,10,15,20,25]]`
 - When multiple arguments taken, Haskell prioritize the last one `[x * y | y <- [1..3] , x <- [10,9,8]]` => `[10,9,8,20,18,16,30,27,24]`
+
+
+# Haskell 2e: Tuples [(Video Link)](https://www.youtube.com/watch?v=hJGEuFjcvZ8&list=PLS6urCrsYES24Fwzg5-Uga1QEbNm9kiU_&index=6)
+- List is a big type, while different size of tuples are different type
+```
+[1,2] == [1,2,3] => True
+(1,2) == (1,2,3) => ERROR
+```
+
+- A list must store same type, while a tuple can store different types of infomration
+```
+[1,"two"] => ERROR
+(1,"two") => (1,"two")
+```
+
+- For tuples, `fst` and `snd` only works for pairs
+- `zip` is a functions to combine lists into a list of tuples (only for pairs), e.g. `zip "ab" [1,2]` => `[("a",1),("b",2)]`
