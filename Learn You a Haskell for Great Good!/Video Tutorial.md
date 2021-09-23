@@ -88,9 +88,15 @@ for simple logical operation
 - `++` returns a combined list. e.g. for `[1,2,2] ++ [1,3,5,10,11,16]` returns `[1,2,2,1,3,5,10,11,16]`.
 - **Haskell's strings = list of characters**, e.g. ['f','n','o','r','d'] = "fnord"
 - `..` can be used to create list. e.g. `[1..10]` returns `[1,2,3,4,5,6,7,8,9,10]`; `['a'..'e']` returns `['a','b','c','d','e']`; `[2,4..10]` returns `[2,4,6,8,10]`; `[10,9..1]` returns `[10,9,8,7,6,5,4,3,2,1]`; `[1..]` returns an infinitely long list. 
+- `take n [1..]` returns a list with nth first terms. e.g. `take 5 [1..]` returns `[1,2,3,4,5]`.
 
 
-
-
-
-
+# Haskell 2d: List comprehensions [(Video Link)](https://www.youtube.com/watch?v=hJGEuFjcvZ8&list=PLS6urCrsYES24Fwzg5-Uga1QEbNm9kiU_&index=5)
+`[ result | variable <- value-to-be-assigned-to-veriable, second set of assignments / constraints, ...]`
+- e.g. `[2^n | n <- [1..10]]` => `[2,4,8,16,32,64,128,256,512,1024]`
+- e.g. `[2^n | n <- [1..10], 2^n >= 10, 2^n < 100]` => `[16,32,64]`
+- e.g. `[x | x <- "outrageous", not (elem x "aeiou")]` => `"trgs"`
+- List comprehensions allow stacking, e.g. 
+  ```[[ x | x <- word, not (x `elem` "aeiou")] | word <- ["bell", "book", "candle"]]``` => `["bll","bk","cndl"]`
+- e.g. `[[x * y | y <- [1..5]] | x <- [1..5]]` => `[[1,2,3,4,5],[2,4,6,8,10],[3,6,9,12,15],[4,8,12,16,20],[5,10,15,20,25]]`
+- When multiple arguments taken, Haskell prioritize the last one `[x * y | y <- [1..3] , x <- [10,9,8]]` => `[10,9,8,20,18,16,30,27,24]`
