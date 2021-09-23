@@ -305,7 +305,7 @@ addTuples [(1,2), (2,3), (100,100)]
 ```
 
 # Haskell for Imperative Programmers #5 - List Exercises
-Solution please find workings at Philipp.hs
+Solution please find workings at Philipp1-5.hs
 ## Exercise #1
 Create a function elem that returns True if an element is in a given list and returns False otherwise
 
