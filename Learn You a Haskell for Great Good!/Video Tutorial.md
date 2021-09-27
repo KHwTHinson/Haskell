@@ -117,3 +117,91 @@ for simple logical operation
 
 - For tuples, `fst` and `snd` only works for pairs
 - `zip` is a functions to combine lists into a list of tuples (only for pairs), e.g. `zip "ab" [1,2]` => `[("a",1),("b",2)]`
+
+
+# Haskell 3: Types and typeclasses [(Video Link)](https://www.youtube.com/watch?v=hJGEuFjcvZ8&list=PLS6urCrsYES24Fwzg5-Uga1QEbNm9kiU_&index=7)
+
+Types: Set of values (e.g. Type `Integer` includes: 1,2,3,-3,0 etc) 
+Typeclasses: Set of types (e.g. Typeclasses `Num` includes `Integer`, `Double`, `Int`, `Float` etc)
+
+Check the type in ghci: `:t / :type True => Bool`, `:t 'a' => Char`
+It also works on functions & operators e.g. (+) (-) (/)
+
+Useful for debugging.
+
+
+# Haskell 4: Function syntax [(Video Link)](https://www.youtube.com/watch?v=hJGEuFjcvZ8&list=PLS6urCrsYES24Fwzg5-Uga1QEbNm9kiU_&index=8)
+
+### If, then, else statement
+```haskell
+increasing :: (Ord a) => [a] -> Bool
+increasing xs = if xs == []
+  then True
+  else if tail xs == []
+    then True
+    else if head xs <= head (tail xs)
+      then increasing (tail xs)
+      else False
+```
+```haskell
+noVowels :: [Char] -> [Char]
+noVowels word = if word == ""
+  then ""
+  else if head word `elem` "aeiouAEIOU"
+    then noVowels (tail word)
+    else head word : noVowels (tail word)
+```
+
+### Pattern matching
+```haskell
+increasing :: (Ord a) => [a] -> Bool
+increasing [] = True
+increasing [x] = True
+increasing (x:y:ys) = x <= y && increasing (y:ys)
+```
+```haskell
+noVowels :: [Char] -> [Char]
+noVowels "" = ""
+noVowels (x:xs)= if x`elem` "aeiouAEIOU"
+    then noVowels xs
+    else x : noVowels xs
+```
+
+### Guard
+```haskell
+noVowels :: [Char] -> [Char]
+noVowels "" = ""
+noVowels (x:xs)
+  | x `elem` "aeiouAEIOU" = noVowels xs
+  | otherwise = x: noVowels xs
+```
+
+### Where
+```haskell
+watch :: Int -> [Char]
+watch n = show n ++ " o'clock and all's well." ++ message n
+  where message 7 = "... SHARKNADO!"
+        message _ = "all's well."
+```
+Note: `show` Converts Values to String / `_` match anything
+
+### `case`
+```haskell
+watch :: Int -> [Char]
+watch n = show n ++ " o'clock and " ++ case n of 7 -> "... SHARKNADO!"
+                                                 _ -> "all's well."
+```
+
+### `let`
+```haskell
+gravity :: (Fractional a) => a -> a
+gravity r = let g = 6.674e-11
+                earthMass = 5.972e24
+            in g * earthMass / (r ^ 2 )
+```
+
+### Note: Haskell does not take tab (only spaces) & it is intendation (same level) sensitivity.
+
+
+
+
