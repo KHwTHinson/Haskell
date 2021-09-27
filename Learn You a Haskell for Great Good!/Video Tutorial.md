@@ -200,7 +200,7 @@ gravity r = let g = 6.674e-11
             in g * earthMass / (r ^ 2 )
 ```
 
-### Note: Haskell does not take tab (only spaces) & it is intendation (same level) sensitivity.
+### Note: Haskell does not take tab (only spaces) & it is intentation (same level) sensitivity.
 
 
 
