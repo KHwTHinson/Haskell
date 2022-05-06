@@ -1,4 +1,4 @@
-# Introducing the Dot Operator `.`in Haskell
+# Introducing the Dot Operator `.` in Haskell
 * A `.` operator takes in 3 arguments, two function and a input to the second function:
 > <img width="557" alt="image" src="https://user-images.githubusercontent.com/90688504/167184068-662fde43-03ea-4e19-a846-b15c2678c349.png">
 
